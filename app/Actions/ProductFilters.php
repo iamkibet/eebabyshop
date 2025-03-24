@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
@@ -32,9 +33,9 @@ class ProductFilters
      */
     public function topProducts(int $take = 5): Collection|array
     {
-        return $this->query->join('order_items', 'products.id', '=', 'order_items.product_id')
-            ->select('products.*', DB::raw('count(order_items.product_id) as count'))
-            ->groupBy('products.id')
+        return Product::query()->join('order_items', 'products.id', '=', 'order_items.product_id')
+            ->select('products.id', 'products.name', 'products.price', DB::raw('count(order_items.product_id) as count'))
+            ->groupBy('products.id', 'products.name', 'products.price')
             ->orderBy('count', 'DESC')
             ->take($take)
             ->get();
