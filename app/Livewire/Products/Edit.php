@@ -21,6 +21,7 @@ class Edit extends Component
 
     public mixed $productImage = null;
     public $productImages;
+   
 
     public string $productFeatureTitle = '';
     public string $productFeatureDescription = '';

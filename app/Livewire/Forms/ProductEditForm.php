@@ -23,6 +23,10 @@ class ProductEditForm extends Form
     public int $stockQuantity = 2;
     public string $category = '';
     public string $shippedFrom = '';
+    public string $size = '';
+    public string $gender = '';
+
+    public string $color = '';
 
     public string $image = '';
 
@@ -35,6 +39,9 @@ class ProductEditForm extends Form
         $product->category = $this->category;
         $product->price = $this->price;
         $product->brand = $this->brand;
+        $product->size = $this->size;
+        $product->color = $this->color;
+        $product->gender = $this->gender;
         $product->description = $this->description;
         $product->stock_quantity = $this->stockQuantity;
         $product->return_policy = $this->returnPolicy;
