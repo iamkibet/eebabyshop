@@ -23,9 +23,7 @@
     @livewireStyles
     <script src="//unpkg.com/alpinejs" defer></script>
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="{{ mix('resources/css/app.css') }}" as="style">
-    <link rel="preload" href="{{ mix('resources/js/app.js') }}" as="script">
+    
 
     <!-- Theme Colors -->
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
