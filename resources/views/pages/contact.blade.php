@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-layouts.guest>
     <x-slot:title>Contact Us Page</x-slot:title>
 
     <div class="max-w-6xl mx-auto">
@@ -90,4 +90,4 @@
 
         <livewire:pages.contact />
     </div>
-</x-guest-layout>
+</x-layouts.guest>
