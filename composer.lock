@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3ba6dafa4403a7b6663798e2ce7f08e",
+    "content-hash": "577a1f5c509f19c13982702228118edd",
     "packages": [
         {
             "name": "brick/math",
@@ -1053,6 +1053,72 @@
                 }
             ],
             "time": "2025-02-03T10:55:03+00:00"
+        },
+        {
+            "name": "iankumu/mpesa",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Iankumu/mpesa.git",
+                "reference": "71b6955fffbaf9baa0d1fa497dd1daeb08ab2939"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Iankumu/mpesa/zipball/71b6955fffbaf9baa0d1fa497dd1daeb08ab2939",
+                "reference": "71b6955fffbaf9baa0d1fa497dd1daeb08ab2939",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.5",
+                "illuminate/http": "^10.0 | ^11.0 | ^12.0",
+                "illuminate/support": "^10.0 | ^11.0 | ^12.0",
+                "php": "^8.2 | ^8.3 | ^8.4"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0 |^9.0 | ^10.0",
+                "pestphp/pest": "^2.3| ^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Mpesa": "Iankumu\\Mpesa\\Facades\\Mpesa"
+                    },
+                    "providers": [
+                        "Iankumu\\Mpesa\\MpesaServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Iankumu\\Mpesa\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ian Kumu",
+                    "email": "ian@iankumu.com",
+                    "homepage": "https://www.iankumu.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A package that helps integrate the Mpesa APIs to your Laravel Project",
+            "homepage": "https://github.com/Iankumu/mpesa",
+            "keywords": [
+                "laravel",
+                "laravel mpesa",
+                "laravel-mpesa",
+                "mpesa"
+            ],
+            "support": {
+                "issues": "https://github.com/Iankumu/mpesa/issues",
+                "source": "https://github.com/Iankumu/mpesa/tree/2.0.0"
+            },
+            "time": "2025-03-01T10:39:18+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3560,6 +3626,72 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "srmklive/paypal",
+            "version": "3.0.40",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/srmklive/laravel-paypal.git",
+                "reference": "1ddc49fd836a4785933ab953452152f3fedbac63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/srmklive/laravel-paypal/zipball/1ddc49fd836a4785933ab953452152f3fedbac63",
+                "reference": "1ddc49fd836a4785933ab953452152f3fedbac63",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "guzzlehttp/guzzle": "~7.0",
+                "illuminate/support": "~6.0|~7.0|~8.0|~9.0|^10.0|^11.0|^12.0",
+                "nesbot/carbon": "~2.0|^3.0",
+                "php": ">=7.2|^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^8.0|^9.0|^10.0|^11.0",
+                "symfony/var-dumper": "~5.0|^6.0|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "PayPal": "Srmklive\\PayPal\\Facades\\PayPal"
+                    },
+                    "providers": [
+                        "Srmklive\\PayPal\\Providers\\PayPalServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Srmklive\\PayPal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raza Mehdi",
+                    "email": "srmk@outlook.com"
+                }
+            ],
+            "description": "Laravel plugin For Processing Payments Through Paypal Express Checkout. Can Be Used Independently With Other Applications.",
+            "keywords": [
+                "http",
+                "laravel paypal",
+                "paypal",
+                "rest",
+                "web service"
+            ],
+            "support": {
+                "issues": "https://github.com/srmklive/laravel-paypal/issues",
+                "source": "https://github.com/srmklive/laravel-paypal/tree/3.0.40"
+            },
+            "time": "2025-02-25T21:38:18+00:00"
         },
         {
             "name": "symfony/clock",

@@ -36,16 +36,19 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-serif text-slate-900 dark:text-slate-100 antialiased" x-data="{ darkMode: false }" x-init="if (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    localStorage.setItem('darkMode', JSON.stringify(true));
-}
-darkMode = JSON.parse(localStorage.getItem('darkMode'));
-$watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-    x-cloak>
+<body class="text-slate-900 dark:text-slate-100 antialiased" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }"
+    x-init="if (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        localStorage.setItem('darkMode', JSON.stringify(true));
+    }
+    darkMode = JSON.parse(localStorage.getItem('darkMode'));
+    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))" x-cloak>
 
     <livewire:navbar />
 
-    <div class="w-full min-h-screen from-[#fff9fb] to-[#f6f7ff] overflow-x-hidden">
+    <div
+        class="w-full  bg-gradient-to-b  from-[#fff9fb] to-[#f6f7ff] dark:bg-gradient-to-br 
+  dark:from-[#0a0a0a] 
+  dark:to-[#1a1a1a] overflow-x-hidden">
         {{ $slot }}
     </div>
 

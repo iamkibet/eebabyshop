@@ -63,18 +63,33 @@
         </div>
     </div>
 
-    <!-- Category Grid -->
-    <div class="mx-auto overflow-hidden mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid auto-rows-fr gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <x-category-card title="Little Princesses" description="Dreamy Outfits & Accessories"
-                href="{{ route('home') }}" color="from-pink-200/60 via-purple-200/40 to-pink-300/30"
-                bgImage="/images/girlsclothes.webp" textColor="text-pink-50" />
-            <x-category-card title="Adventurous Boys" description="Durable & Playful Designs" href="{{ route('home') }}"
-                color="from-blue-200/60 via-cyan-200/40 to-blue-300/30" bgImage="/images/boysclothes.jpg"
-                textColor="text-blue-50" />
-            <x-category-card title="Essential Comfort" description="Soft Fabrics & Safe Materials"
-                href="{{ route('home') }}" color="from-green-200/60 via-lime-200/40 to-green-300/30"
-                bgImage="/images/romper.avif" textColor="text-green-50" />
-        </div>
+  <!-- Updated Category Grid -->
+<div class="mx-auto overflow-hidden my-24 max-w-7xl px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+    <div class="grid auto-rows-fr gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <x-category-card 
+            title="Little Princesses" 
+            description="Dreamy Outfits & Accessories"
+            href="{{ route('home') }}" 
+            color="from-pink-200/60 via-purple-200/40 to-pink-300/30 dark:from-pink-900/50 dark:via-purple-900/30 dark:to-pink-800/40"
+            bgImage="/images/girlsclothes.webp" 
+            textColor="text-pink-50 dark:text-gray-100"
+        />
+        <x-category-card 
+            title="Adventurous Boys" 
+            description="Durable & Playful Designs" 
+            href="{{ route('home') }}"
+            color="from-blue-200/60 via-cyan-200/40 to-blue-300/30 dark:from-blue-900/50 dark:via-cyan-900/30 dark:to-blue-800/40"
+            bgImage="/images/boysclothes.jpg"
+            textColor="text-blue-50 dark:text-gray-100"
+        />
+        <x-category-card 
+            title="Essential Comfort" 
+            description="Soft Fabrics & Safe Materials"
+            href="{{ route('home') }}" 
+            color="from-green-200/60 via-lime-200/40 to-green-300/30 dark:from-green-900/50 dark:via-lime-900/30 dark:to-green-800/40"
+            bgImage="/images/romper.avif" 
+            textColor="text-green-50 dark:text-gray-100"
+        />
     </div>
+</div>
 </section>

@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-layouts.guest>
     <x-slot:title>
         Blog - Informative, Educational and Entertaining News and Resources
     </x-slot:title>
@@ -42,4 +42,4 @@
             </div>
         </div>
     </div>
-</x-guest-layout>
+</x-layouts.guest>

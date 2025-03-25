@@ -7,18 +7,18 @@
     'textColor'   // e.g. "text-pink-50"
 ])
 
-<div class="group relative h-96 overflow-hidden rounded-3xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+<div class="group relative h-96 overflow-hidden rounded-3xl shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl dark:hover:shadow-gray-800/30"
      style="background-image: url('{{ asset($bgImage) }}'); background-size: cover; background-position: center;">
     <!-- Color Gradient Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br opacity-60 transition-opacity duration-500 group-hover:opacity-80 {{ $color }}"></div>
+    <div class="absolute inset-0 bg-gradient-to-br opacity-60 transition-opacity duration-500 group-hover:opacity-80 {{ $color }} dark:opacity-70 dark:group-hover:opacity-90"></div>
 
     <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent dark:from-black/30 dark:via-black/15"></div>
 
     <!-- Content -->
     <div class="relative z-10 flex h-full flex-col justify-end p-8">
         <div class="space-y-4">
-            <h2 class="text-3xl font-bold tracking-tight md:text-4xl drop-shadow-lg transition-transform duration-300 group-hover:-translate-y-1 {{ $textColor }}">
+            <h2 class="text-3xl font-bold tracking-tight md:text-4xl drop-shadow-lg transition-transform duration-300 group-hover:-translate-y-1 {{ $textColor }} dark:text-gray-100">
                 {{ $title }}
             </h2>
 
