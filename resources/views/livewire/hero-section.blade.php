@@ -1,80 +1,77 @@
-<section class="mx-auto max-w-7xl">
+<section class="mx-auto max-w-7xl my-6 md:my-10 px-4 sm:px-6 lg:px-8">
     <!-- Hero Section -->
-    <div class="relative isolate overflow-hidden px-6 lg:px-0">
-        <!-- Decorative Elements -->
-        <div
-            class="bg-gradient-radial absolute top-0 left-1/2 -z-10 h-[64rem] w-[128rem] -translate-x-1/2 rounded-full from-[#ffd6e0] to-70% opacity-30 blur-3xl dark:from-[#2c1a22]">
-        </div>
+    <div class="relative isolate overflow-hidden lg:px-0">
+        <!-- Decorative Elements (Optimized for Mobile) -->
+        <div class="bg-gradient-radial absolute top-0 left-1/2 -z-10 h-[48rem] w-[100vw] -translate-x-1/2 rounded-full from-[#ffd6e0] to-70% opacity-30 blur-3xl dark:from-[#2c1a22] sm:h-[64rem] sm:w-[128rem]"></div>
 
-        <div
-            class="mx-auto grid max-w-2xl grid-cols-1 gap-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-x-8">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-x-16 xl:gap-x-24">
             <!-- Text Content -->
-            <div class="relative lg:order-first">
-                <h1
-                    class="font-pacifo text-5xl leading-tight text-[#2c1a22] drop-shadow-sm sm:text-6xl sm:leading-tight lg:text-7xl dark:text-[#ffe6ed]">
+            <div class="relative lg:order-first text-center lg:text-left">
+                <h1 class="font-pacifo text-4xl leading-tight text-[#2c1a22] drop-shadow-sm xs:text-5xl sm:text-6xl sm:leading-tight lg:text-[clamp(3.5rem,5vw,4.5rem)] dark:text-[#ffe6ed]">
                     Where Tiny
-                    <span class="relative whitespace-nowrap text-[#ff6b8a]">
+                    <span class="relative inline-block text-[#ff6b8a]">
                         Dreams
-                        <svg class="absolute -bottom-2 left-0 h-3 w-full text-[#ff3d6a]" viewBox="0 0 200 20">
+                        <svg class="absolute -bottom-2 left-0 h-3 w-full text-[#ff3d6a] scale-90 sm:scale-100" viewBox="0 0 200 20">
                             <path d="M0 18.5Q100 0 200 18.5" fill="none" stroke="currentColor" stroke-width="2" />
                         </svg>
                     </span>
                     Begin
                 </h1>
 
-                <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+                <p class="mt-4 text-base leading-7 text-gray-600 dark:text-gray-300 sm:text-lg sm:leading-8 md:mt-6">
                     Curated with love, our collection brings you the finest baby essentials.
-                    <span class="mt-2 block font-semibold text-[#ff6b8a]">
+                    <span class="mt-3 block text-sm font-semibold text-[#ff6b8a] sm:text-base md:mt-4">
                         Affordable • Best Quality • Unique
                     </span>
                 </p>
 
-                <!-- CTA Buttons -->
-                <div class="mt-8 flex flex-wrap gap-4">
-                    <a href="{{ route('products') }}"
-                        class="group relative flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#ff6b8a] to-[#ff8e6b] px-6 py-4 font-semibold text-white shadow-lg shadow-[#ff6b8a]/20 transition-all hover:shadow-xl hover:shadow-[#ff6b8a]/30">
+                <!-- CTA Buttons (Stack on Mobile) -->
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4 md:mt-8">
+                    <a href="{{ route('products') }}" 
+                       class="group relative flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#ff6b8a] to-[#ff8e6b] px-5 py-3.5 font-semibold text-white shadow-lg shadow-[#ff6b8a]/20 transition-all hover:shadow-xl hover:shadow-[#ff6b8a]/30 sm:px-6 sm:py-4">
                         <span>🛍 Start Exploring</span>
-                        <div
-                            class="h-4 w-4 rounded-full bg-white/20 transition-all group-hover:w-6 group-hover:bg-white/30">
-                        </div>
+                        <div class="h-3.5 w-3.5 rounded-full bg-white/20 transition-all group-hover:w-5 group-hover:bg-white/30 sm:h-4 sm:w-4"></div>
                     </a>
 
                     <a href="{{ route('products') }}"
-                        class="flex items-center gap-2 rounded-xl border-2 border-[#ff6b8a] bg-transparent px-6 py-4 font-semibold text-[#ff6b8a] transition-all hover:bg-[#ff6b8a]/10">
+                       class="flex items-center justify-center gap-2 rounded-xl border-2 border-[#ff6b8a] bg-transparent px-5 py-3.5 font-semibold text-[#ff6b8a] transition-all hover:bg-[#ff6b8a]/10 sm:px-6 sm:py-4">
                         ✨ New Arrivals
                         <span class="relative flex h-3 w-3">
-                            <span
-                                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff6b8a] opacity-75"></span>
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff6b8a] opacity-75"></span>
                             <span class="relative inline-flex h-3 w-3 rounded-full bg-[#ff6b8a]"></span>
                         </span>
                     </a>
                 </div>
             </div>
 
-            <!-- Image Section -->
-            <div class="relative -mx-6 lg:order-last lg:pt-8">
-                <div class="animate-float relative aspect-[1/1] w-full">
+            <!-- Image Section (Optimized Aspect Ratio) -->
+            <div class="relative lg:order-last lg:pt-8">
+                <div class="animate-float relative aspect-square w-full max-w-[560px] lg:ml-auto">
                     <img src="/images/babyhero.svg" alt="Happy Baby"
-                        class="absolute top-0 left-0 h-full w-full object-contain" />
-                    <div class="absolute -top-8 -left-8 h-32 w-32 rounded-full bg-[#ffd6e0] blur-3xl dark:bg-[#2c1a22]">
-                    </div>
+                         class="h-full w-full object-contain"
+                         loading="eager"
+                         fetchpriority="high"
+                         width="560"
+                         height="560">
+                    <div class="absolute -top-6 -left-6 h-24 w-24 rounded-full bg-[#ffd6e0] blur-3xl dark:bg-[#2c1a22] sm:-top-8 sm:-left-8 sm:h-32 sm:w-32"></div>
                 </div>
             </div>
         </div>
     </div>
 
-  <!-- Updated Category Grid -->
-<div class="mx-auto overflow-hidden my-24 max-w-7xl px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
-    <div class="grid auto-rows-fr gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <x-category-card 
-            title="Little Princesses" 
-            description="Dreamy Outfits & Accessories"
-            href="{{ route('home') }}" 
-            color="from-pink-200/60 via-purple-200/40 to-pink-300/30 dark:from-pink-900/50 dark:via-purple-900/30 dark:to-pink-800/40"
-            bgImage="/images/girlsclothes.webp" 
-            textColor="text-pink-50 dark:text-gray-100"
-        />
-        <x-category-card 
+    <!-- Category Grid with Responsive Breakpoints -->
+    <div class="mx-auto my-16 overflow-hidden sm:my-20 lg:my-24">
+        <div class="grid auto-rows-fr gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <x-category-card 
+                title="Little Princesses" 
+                description="Dreamy Outfits & Accessories"
+                href="{{ route('home') }}" 
+                color="from-pink-200/60 via-purple-200/40 to-pink-300/30 dark:from-pink-900/50 dark:via-purple-900/30 dark:to-pink-800/40"
+                bgImage="/images/girlsclothes.webp" 
+                textColor="text-pink-50 dark:text-gray-100"
+                class="aspect-[1.5/1] sm:aspect-[1.25/1] lg:aspect-square"
+            />
+             <x-category-card 
             title="Adventurous Boys" 
             description="Durable & Playful Designs" 
             href="{{ route('home') }}"
@@ -90,6 +87,6 @@
             bgImage="/images/romper.avif" 
             textColor="text-green-50 dark:text-gray-100"
         />
+        </div>
     </div>
-</div>
 </section>
