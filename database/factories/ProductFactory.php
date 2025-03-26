@@ -25,46 +25,18 @@ class ProductFactory extends Factory
 
         // sample product categories
         $productCategories = [
-            'Clothing',
-            'Phones',
-            'Electronics',
-            'Fitness',
-            'Fashion',
-            'Food',
-            'Computing',
-            'Energy',
-            'Cars',
-            'Entertainment',
-            'Agriculture'
+            'Shoes'
         ];
 
         // Sample Product brands
         $productBrands = [
-            'Gucci',
-            'Mamba',
-            'Afrikana',
-            'Simba',
-            'Tesla',
-            'Sony',
-            'Maara',
-            'Savannah',
-            'Maasai',
-            'Safaricom',
-            'Tesla',
-            'Meta',
-            'Alibaba',
-            'Amazon',
-            'Wakanda',
-            'Lion',
-            'Puma',
-            'Toyota',
-            'Rasta',
-            'Apple',
-            'Google',
-            'Samsung',
-            'Huawei',
-            'Xiaomi',
-            'Hp'
+            'E $ E'
+        ];
+
+        $productGender = [
+            'Male',
+            'Female',
+            'Unisex'
         ];
 
         return [
@@ -75,6 +47,9 @@ class ProductFactory extends Factory
             'brand' => Arr::random($productBrands),
             'price' => $this->faker->randomFloat(2, 250, 3200),
             'stock_quantity' => rand(0, 52),
+            'size' => $this->faker->numberBetween(0, 32),
+            'gender' => $this->faker->randomElement(['male', 'female', 'unisex']),
+            'color' => $this->faker->safeColorName(),
             'return_policy' => Arr::random(['30 days', '3 days', '7 days', '14 days']),
             'shipped_from' => $this->faker->city(),
             'image' => !empty($productImages) ? Arr::random($productImages) : 'default.jpg',
