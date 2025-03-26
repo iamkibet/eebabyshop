@@ -1,5 +1,4 @@
-<div wire:ignore
-    class="grid lg:grid-cols-3 gap-6 items-center mt-6 py-6 px-4 rounded-lg">
+<div wire:ignore class="grid lg:grid-cols-3 gap-6 items-center mt-6 py-6 px-4 rounded-lg">
     <!-- Left Column -->
     <div class="lg:col-span-2">
         <div class="lg:col-span-2 space-y-6">
@@ -65,87 +64,90 @@
                         <p class="text-2xl font-bold text-blue-600 dark:text-blue-400">{{ $productsCount }}</p>
                         <span
                             class="px-2 py-1 text-sm bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900/30 dark:text-blue-400">
-                            {{ number_format(($purchasedProducts / $productsCount) * 100, 1) }}%
+                            @if ($productsCount > 0)
+                                {{ number_format(($purchasedProducts / $productsCount) * 100, 1) }}%
+                            @else
+                                0%
+                            @endif
                         </span>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">
+                            {{ $purchasedProducts }} purchased items
+                        </p>
                     </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">
-                        {{ $purchasedProducts }} purchased items
-                    </p>
                 </div>
+            </div>
+
+            <!-- Top Products -->
+            <div class="p-6 bg-white dark:bg-gray-800 rounded-xl">
+                <h4 class="text-lg font-bold mb-4">Top Products</h4>
+                <x-parts.top-products :$topProducts />
             </div>
         </div>
 
-        <!-- Top Products -->
-        <div class="p-6 bg-white dark:bg-gray-800 rounded-xl">
-            <h4 class="text-lg font-bold mb-4">Top Products</h4>
-            <x-parts.top-products :$topProducts />
-        </div>
-    </div>
+        @script
+            <script>
+                let orderCountPerMonth = $wire.orderCountPerMonth;
+                let months = $wire.months;
+                let suggestedMax = $wire.maxChartBarValue;
 
-    @script
-        <script>
-            let orderCountPerMonth = $wire.orderCountPerMonth;
-            let months = $wire.months;
-            let suggestedMax = $wire.maxChartBarValue;
+                const ctx = document.getElementById('salesChart');
+                darkMode = JSON.parse(localStorage.getItem('darkMode'));
 
-            const ctx = document.getElementById('salesChart');
-            darkMode = JSON.parse(localStorage.getItem('darkMode'));
-
-            let config = {
-                type: 'bar',
-                data: {
-                    labels: months,
-                    datasets: [{
-                        label: '# of Orders Per Month',
-                        data: orderCountPerMonth,
-                        borderWidth: 0,
-                        borderColor: darkMode ? '#475569' : '#f5f5f4',
-                        backgroundColor: darkMode ? '#fb923c' : '#ea580c',
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            suggestedMin: 1,
-                            suggestedMax: suggestedMax
+                let config = {
+                    type: 'bar',
+                    data: {
+                        labels: months,
+                        datasets: [{
+                            label: '# of Orders Per Month',
+                            data: orderCountPerMonth,
+                            borderWidth: 0,
+                            borderColor: darkMode ? '#475569' : '#f5f5f4',
+                            backgroundColor: darkMode ? '#fb923c' : '#ea580c',
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                suggestedMin: 1,
+                                suggestedMax: suggestedMax
+                            }
+                        },
+                        plugins: {
+                            customCanvasBackgroundColor: {
+                                'color': 'lightGreen'
+                            }
                         }
                     },
-                    plugins: {
-                        customCanvasBackgroundColor: {
-                            'color': 'lightGreen'
+                    plugins: [{
+                        id: 'customCanvasBackgroundColor',
+                        beforeDraw: (chart, args, options) => {
+                            const {
+                                ctx
+                            } = chart;
+                            ctx.save();
+                            ctx.globalCompositeOperation = 'destination-over';
+                            ctx.fillStyle = options.color || '#99ffff';
+                            ctx.fillRect(0, 0, chart.width, chart.height);
+                            ctx.borderRadius = options.borderRadius || 2
+                            ctx.restore();
                         }
-                    }
-                },
-                plugins: [{
-                    id: 'customCanvasBackgroundColor',
-                    beforeDraw: (chart, args, options) => {
-                        const {
-                            ctx
-                        } = chart;
-                        ctx.save();
-                        ctx.globalCompositeOperation = 'destination-over';
-                        ctx.fillStyle = options.color || '#99ffff';
-                        ctx.fillRect(0, 0, chart.width, chart.height);
-                        ctx.borderRadius = options.borderRadius || 2
-                        ctx.restore();
-                    }
-                }]
-            }
-
-            let salesChart = new Chart(ctx, config);
-
-            Livewire.on('update-sales-chart', () => {
-                if (window.salesChart) {
-                    salesChart.destroy();
+                    }]
                 }
 
-                config.data.labels = $wire.months;
-                config.data.datasets[0].data = $wire.orderCountPerMonth;
-                config.options.scales.y.suggestedMax = suggestedMax;
+                let salesChart = new Chart(ctx, config);
 
-                salesChart = new Chart(ctx, config)
-            });
-        </script>
-    @endscript
-</div>
+                Livewire.on('update-sales-chart', () => {
+                    if (window.salesChart) {
+                        salesChart.destroy();
+                    }
+
+                    config.data.labels = $wire.months;
+                    config.data.datasets[0].data = $wire.orderCountPerMonth;
+                    config.options.scales.y.suggestedMax = suggestedMax;
+
+                    salesChart = new Chart(ctx, config)
+                });
+            </script>
+        @endscript
+    </div>

@@ -54,7 +54,7 @@ class AdminController extends Controller
 
         $data = $this->stats();
 
-        return view('dashboard', [
+        return view('admin.dashboard', [
             'posts' => $posts,
             'productsCount' => $data['products']->count(),
             'stocked' => $data['products']->where('stock_quantity', '>', 0)->count(),

@@ -44,18 +44,18 @@
         </div>
     </div>
 
-   <header
-  :class="scrolled 
-    ? 'bg-white/95 supports-backdrop-blur:bg-white/60 [@supports(backdrop-filter:blur(0))]:backdrop-blur-md dark:bg-[#0f0f0f]/95 border-b border-gray-100 dark:border-gray-800' 
-    : 'bg-gradient-to-r from-[#fff9fb] to-[#f6f7ff] dark:bg-none dark:bg-black'"
-  class="transition-colors transition-background duration-300"
->
+    <header
+        :class="scrolled
+            ?
+            'bg-white/95 supports-backdrop-blur:bg-white/60 [@supports(backdrop-filter:blur(0))]:backdrop-blur-md dark:bg-[#0f0f0f]/95 border-b border-gray-100 dark:border-gray-800' :
+            'bg-gradient-to-r from-[#fff9fb] to-[#f6f7ff] dark:bg-none dark:bg-black'"
+        class="transition-colors transition-background duration-300">
         <div class="container mx-auto px-4">
             <div class="flex h-16 items-center justify-between">
                 <!-- Logo -->
-                <div class="flex items-center flex-shrink-0">
+                <a href="/" class="flex items-center flex-shrink-0">
                     <x-app-logo :class="scrolled ? 'h-8' : 'h-10'" class="transition-all duration-300" />
-                </div>
+                </a>
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
