@@ -27,15 +27,16 @@ class AdminController extends Controller
         ]);
     }
 
+
+
     public function topProducts($take = 5): Collection|array
     {
-        return Product::query()->join('order_items', 'products.id', '=', 'order_items.product_id')
-            ->select('products.*', DB::raw('count(order_items.product_id) as count'))
-            ->groupBy('products.id')
-            ->orderBy('count', 'DESC')
-            ->take($take)
+        return Product::withCount('orderItems')
+            ->orderByDesc('order_items_count')
+            ->take(5)
             ->get();
     }
+
 
     public function purchasedProducts(): Collection|array
     {
