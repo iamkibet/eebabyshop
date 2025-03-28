@@ -48,6 +48,11 @@ class Product extends Model
         return Storage::disk('public')->url($this->image);
     }
 
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class, 'product_id');
+    }
+
     /**
      * In addition to description, a product should have key features.
      * These are used to describe the main selling points for a product.
