@@ -27,13 +27,13 @@
         <!-- Product Content -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
             <!-- Image Gallery -->
-            <div class="space-y-4">
+            <div x-data="imageZoom()">
                 <div
                     class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700/50">
                     <div class="aspect-w-1 aspect-h-1">
-                        <img class="w-full h-full object-contain rounded-xl"
-                            src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" loading="lazy"
-                            x-data="imageZoom">
+                        <!-- Bind the src attribute to mainImage -->
+                        <img class="w-full h-full object-contain rounded-xl" :src="mainImage"
+                            alt="{{ $product->name }}" loading="lazy">
                     </div>
                 </div>
 
@@ -273,7 +273,9 @@
     <script>
         function imageZoom() {
             return {
+
                 mainImage: '{{ asset('storage/' . $product->image) }}',
+
                 switchImage(newImage) {
                     this.mainImage = newImage;
                 }
