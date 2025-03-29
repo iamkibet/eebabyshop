@@ -61,7 +61,7 @@
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="{{ route('home') }}"
                         class="nav-link text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
-                    <a href="{{ route('products') }}"
+                    <a href="{{ route('shop') }}"
                         class="nav-link text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Shop</a>
 
                     <!-- Categories Dropdown -->

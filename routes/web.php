@@ -22,7 +22,7 @@ Route::view('/privacy-policy', 'pages.about')->name('privacy-policy');
 Route::view('/terms-and-conditions', 'pages.about')->name('terms-and-conditions');
 Route::view('/gallery/videos', 'pages.videos')->name('videos');
 Route::get('/products', [ProductController::class, 'index'])->name('products');
-Route::get('/products/{product:slug}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/shop/{product:slug}', [ProductController::class, 'show'])->name('product.show');
 Route::get('/shop', [ProductController::class, 'index'])->name('shop');
 Route::get('/blog', [PostController::class, 'index'])->name('blog');
 Route::view('/contact', 'pages.contact')->name('contact-me');
