@@ -1,7 +1,7 @@
-<section class="mx-auto max-w-7xl my-6 md:my-10 px-4 sm:px-6 lg:px-8">
+<section class="mx-auto max-w-7xl  mt-16 md:mt-0  md:my-10 px-4 sm:px-6 lg:px-8">
     <!-- Hero Section -->
     <div class="relative isolate overflow-hidden lg:px-0">
-        <!-- Decorative Elements (Optimized for Mobile) -->
+        
         <div class="bg-gradient-radial absolute top-0 left-1/2 -z-10 h-[48rem] w-[100vw] -translate-x-1/2 rounded-full from-[#ffd6e0] to-70% opacity-30 blur-3xl dark:from-[#2c1a22] sm:h-[64rem] sm:w-[128rem]"></div>
 
         <div class="mx-auto grid max-w-2xl grid-cols-1 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-x-16 xl:gap-x-24">

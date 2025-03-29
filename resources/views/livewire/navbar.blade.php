@@ -18,13 +18,14 @@
         <div class="container mx-auto px-4">
             <div class="flex h-10 items-center justify-between text-sm">
                 <div class="flex items-center space-x-4">
-                    <a href="tel:+11234567890"
-                        class="flex items-center text-blue-900 dark:text-blue-300 hover:text-[#ff4c68] dark:hover:text-[#ff4c68] transition-colors">
-                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="tel:+254742169017"
+                        class="flex items-center text-[#2c1a22] dark:text-blue-300 hover:text-[#ff4c68] dark:hover:text-[#ff4c68] transition-colors group">
+                        <svg class="w-5 h-5 mr-1.5 group-hover:scale-110 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
-                        +254 (742) 169-017
+                        <span class="tracking-wide">+254 742 169 017</span>
                     </a>
                 </div>
 
@@ -142,20 +143,27 @@
                 <div class="space-y-2">
                     <a href="{{ route('home') }}"
                         class="mobile-nav-link text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors block">Home</a>
-                    <a href="{{ route('products') }}"
+                    <a href="{{ route('shop') }}"
                         class="mobile-nav-link text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors block">Shop</a>
 
                     <div x-data="{ categoriesOpen: false }" class="space-y-2">
-                        <button @click="categoriesOpen = !categoriesOpen"
-                            class="w-full flex items-center justify-between mobile-nav-link text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                            <span>Categories</span>
-                            <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': categoriesOpen }"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
+                      
 
+
+                        <button @click="categoriesOpen = !categoriesOpen"
+                            class="w-full flex items-center justify-between px-4 py-3 group transition-colors text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg"
+                    >
+                            <span class="font-medium tracking-wide">Categories</span>
+                            <div class="flex items-center gap-x-3">
+                                
+                                <svg class="w-5 h-5 transition-transform duration-300"
+                                    :class="{ 'rotate-180': categoriesOpen }" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </button>
                         <div x-show="categoriesOpen" class="pl-4 space-y-2">
                             <a href="{{ route('products', 'shop') }}"
                                 class="mobile-nav-link text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors block">Clothing</a>
