@@ -161,6 +161,36 @@
                         <p class="text-red-600 text-sm font-medium">{{ $message }}</p>
                     @enderror
                 </div>
+                <div>
+                    <label for="color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product
+                        Color</label>
+                    <input type="text" name="color" wire:model="form.color" id="color"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="blue, green etc...">
+                    @error('form.color')
+                        <p class="text-red-600 text-sm font-medium">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div>
+                    <label for="size" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product
+                        Size</label>
+                    <input type="text" name="size" wire:model="form.size" id="size"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Ex. 23, 27...">
+                    @error('form.size')
+                        <p class="text-red-600 text-sm font-medium">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div>
+                    <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product
+                        Gender</label>
+                    <input type="text" name="gender" wire:model="form.gender" id="gender"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Ex. Fashion, Fitness, Electronics, Phones...">
+                    @error('form.gender')
+                        <p class="text-red-600 text-sm font-medium">{{ $message }}</p>
+                    @enderror
+                </div>
 
                 <div>
                     <label for="stock-quantity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">

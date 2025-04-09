@@ -21,7 +21,7 @@ class Edit extends Component
 
     public mixed $productImage = null;
     public $productImages;
-   
+
 
     public string $productFeatureTitle = '';
     public string $productFeatureDescription = '';
@@ -34,6 +34,9 @@ class Edit extends Component
         $this->form->brand = $this->product->brand;
         $this->form->category = $this->product->category;
         $this->form->price = $this->product->price;
+        $this->form->gender = $this->product->gender;
+        $this->form->size = $this->product->size;
+        $this->form->color = $this->product->color;
         $this->form->description = $this->product->description;
         $this->form->stockQuantity = $this->product->stock_quantity;
         $this->form->shippedFrom = $this->product->shipped_from;
@@ -73,7 +76,7 @@ class Edit extends Component
     public function uploadProductImages()
     {
         if (!is_null($this->productImages)) {
-            Arr::map($this->productImages, function($image) {
+            Arr::map($this->productImages, function ($image) {
                 $imageUrl = Storage::disk('public')->putFileAs(
                     'products',
                     $image,
@@ -90,7 +93,7 @@ class Edit extends Component
 
     public function deleteProductImage($id)
     {
-        $im = ProductImages::where('id',$id)->first();
+        $im = ProductImages::where('id', $id)->first();
         Storage::disk('public')->delete($im->image_location);
         $im->delete();
 
